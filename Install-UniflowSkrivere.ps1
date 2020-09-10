@@ -20,7 +20,7 @@ Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$InstallDrive
 $Printer = [PSCustomObject]@{
     Name           = "Canon_Skriver"
     PortName       = "CanonSP"
-    ServerHost     = "192.168.99.145"
+    ServerHost     = "192.168.99.146"
     LprQueueName   = "Sikker_Utskrift"
     DriverName     = "uniFLOW Universal PCLXL Driver"
     PrintProcessor = "winprint"
