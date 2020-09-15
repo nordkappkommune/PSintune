@@ -13,8 +13,8 @@ $Result = (((Invoke-WebRequest –Uri $URL).Links | Where-Object {$_.href -like 
 $Result = $Result -replace 'amp;',""
 Invoke-WebRequest -Uri $Result -OutFile $ZipFile 
 Expand-Archive -Path $ZipFile -DestinationPath "$env:PROGRAMFILES\PrintDriver" -Force
-$InstallDriverPath = "$env:PROGRAMFILES\PrintDriver\momud_pclxl_2019LTS_SR1_WHQL\MomUdPclXl.inf"
-Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$InstallDriverPath`"" -Wait
+$InfFile = Get-ChildItem -Path "$env:PROGRAMFILES\PrintDriver" -Recurse | Where-Object { $_.Extension -eq ".inf" }
+Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$($InfFile.FullName)`"" -Wait
 
 #Printer Object
 $Printer = [PSCustomObject]@{
