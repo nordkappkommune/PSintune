@@ -44,4 +44,4 @@ New-Item -Path "HKLM:\SOFTWARE\WOW6432Node\Nt-ware" -Name "MOMUD" -Force
 New-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Nt-ware\MOMUD" -Name "AltUserIdent" -Value $HKLMValue -PropertyType "String" -Force
 New-ItemProperty -Path "HKLM:\System\ControlSet001\Control\Print\Printers\$($Printer.Name)\PrinterDriverData\" -Name "Port" -Value "8000" -PropertyType "String" -Force
 New-ItemProperty -Path "HKLM:\System\ControlSet001\Control\Print\Printers\$($Printer.Name)\PrinterDriverData\" -Name "Url" -Value "/pwclient/isapi/IcarusRequest.dll?script=showudoptions.icarus" -PropertyType "String" -Force
-Set-ItemProperty -Path "HKLM:\System\ControlSet001\Control\Print\Printers\$($Printer.Name)\" -Name "Print Processor" -Value 'winprint' -Force
+Set-ItemProperty -Path "HKLM:\System\ControlSet001\Control\Print\Printers\$($Printer.Name)\" -Name "Print Processor" -Value "winprint" -Force
