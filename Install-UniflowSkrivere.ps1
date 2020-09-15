@@ -18,7 +18,7 @@ Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$($InfFile.Fu
 
 #Printer Object
 $Printer = [PSCustomObject]@{
-    Name           = "Canon_Skriver"
+    Name           = "Sikker_Utskrift"
     PortName       = "CanonSP"
     ServerHost     = "192.168.99.146"
     LprQueueName   = "Sikker_Utskrift"
