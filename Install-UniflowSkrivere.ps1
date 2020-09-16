@@ -18,10 +18,10 @@ Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$($InfFile.Fu
 
 #Printer Object
 $Printer = [PSCustomObject]@{
-    Name           = "Sikker_Utskrift"
+    Name           = "Sikker_Utskrift_Elev"
     PortName       = "CanonSPP"
     ServerHost     = "192.168.99.146"
-    LprQueueName   = "Sikker_Utskrift"
+    LprQueueName   = "Sikker_Utskrift_Elev"
     DriverName     = "uniFLOW Universal PCLXL Driver"
     PrintProcessor = "winprint"
 }
