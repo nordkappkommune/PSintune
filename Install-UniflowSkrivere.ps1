@@ -8,10 +8,8 @@ $UPN = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\IdentityStore\Cache
 
 #Print Driver
 $ZipFile = "C:\Windows\Temp\uniflow_pclxl.zip"
-$URL = "https://www.nt-ware.com/home/ar/universal_driver/"
-$Result = (((Invoke-WebRequest –Uri $URL).Links | Where-Object {$_.href -like “http*” -and $_.innerHTML -like "*PCL XL Driver*"} ) | Select-Object href).href 
-$Result = $Result -replace 'amp;',""
-Invoke-WebRequest -Uri $Result -OutFile $ZipFile 
+$URL = "https://raw.githubusercontent.com/Hortenkommune/ContinuousDelivery4Intune/master/resources/bin/uniflow_pclxl.zip"
+Invoke-WebRequest -Uri $URL -OutFile $ZipFile 
 Expand-Archive -Path $ZipFile -DestinationPath "$env:PROGRAMFILES\PrintDriver" -Force
 $InfFile = Get-ChildItem -Path "$env:PROGRAMFILES\PrintDriver" -Recurse | Where-Object { $_.Extension -eq ".inf" }
 Start-Process -FilePath "pnputil.exe" -ArgumentList "/Add-Driver `"$($InfFile.FullName)`"" -Wait
