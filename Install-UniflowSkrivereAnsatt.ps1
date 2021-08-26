@@ -19,7 +19,7 @@ $Printer = [PSCustomObject]@{
     Name           = "Sikker_Utskrift_Ansatt"
     PortName       = "CanonSPPE"
     ServerHost     = "192.168.99.146"
-    LprQueueName   = "Sikker_Utskrift_Elev"
+    LprQueueName   = "Sikker_Utskrift_Ansatt"
     DriverName     = "uniFLOW Universal PCLXL Driver"
     PrintProcessor = "winprint"
 }
